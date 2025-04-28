@@ -76,7 +76,7 @@ public class BuscarCaminho {
                 }
             }
 
-            // se não achou diretamente, tenta invertido
+
             if (!encontrouConexao) {
                 for (ConexaoCidade conexao : conexoes) {
                     if (conexao.cidadeOrigem().equals(destino) && conexao.cidadeDestino().equals(origem)) {
