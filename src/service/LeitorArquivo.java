@@ -61,10 +61,16 @@ public class LeitorArquivo {
                         ));
                     }
                 } else if (separador == 2) {
-                    if (cepOrigem == null) {
-                        cepOrigem = linha;
-                    } else if (cepDestino == null) {
-                        cepDestino = linha;
+                    if (linha.contains(",")) {
+                        String[] partes = linha.split(",");
+                        if (partes.length == 2) {
+                            cepOrigem = partes[0].trim();
+                            cepDestino = partes[1].trim();
+                        } else {
+                            throw new IOException("Formato inválido na seção de CEPs. Esperado dois valores separados por vírgula.");
+                        }
+                    } else {
+                        throw new IOException("Formato inválido na seção de CEPs. Esperado dois valores separados por vírgula.");
                     }
                 }
             }
