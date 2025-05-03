@@ -19,7 +19,7 @@ public class Main {
         System.out.println("Informe o caminho completo do arquivo:");
         System.out.println("Exemplo: C:\\Users\\usuario\\arquivo.txt");
         System.out.print("Digite o caminho: ");
-        String arquivo = entrada.nextLine().trim();  // variável com letra minúscula (boas práticas)
+        String arquivo = entrada.nextLine().trim();
 
         try {
             LeitorArquivo leitor = new LeitorArquivo();
